@@ -1,0 +1,610 @@
+﻿
+.cart-block
+{
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.cart-block > .items
+{
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.product
+{
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	margin-bottom: 25px;
+
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.product .product-image, .product .link-img
+{
+	width: 150px;
+	min-width: 150px;
+	max-width: 150px;
+	height: 150px;
+	margin-right: 25px;
+}
+
+.product > .product-info
+{
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	padding: 20px;
+}
+
+.product > .product-info > .product-name
+{
+	font-size: 20px;
+
+	margin-top: 15px;
+	margin-bottom: 30px;
+
+	color: #000000;
+}
+
+.product > .product-info > .product-detail
+{
+	position: relative;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	width: 100%;
+
+	white-space: nowrap;
+}
+
+.product > .product-info > .product-detail .product-brand
+{
+	position: absolute;
+	left: 350px;
+}
+
+.product > .product-info > .product-detail p, .product > .product-info > .product-detail a, .product > .product-info > .product-detail p a
+{
+	display: inline-block;
+
+	margin: 0 5px;
+
+	text-align: center;
+
+	color: #9D9A9A;
+}
+
+.product > .product-info > .product-detail p a
+{
+	margin-bottom: 10px;
+
+	color: #E31E24;
+}
+
+.product > .product-price
+{
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 59px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 20px 35px;
+}
+
+.product > .product-price::after
+{
+	font-size: 20px;
+
+	display: flex;
+
+	height: 35px;
+	margin-left: 5px;
+
+	content: "р.";
+}
+
+.product > .product-count
+{
+	font-size: 29px;
+
+	width: 100px;
+	height: 40px;
+
+	text-align: center;
+}
+
+.product > .fav-button
+{
+	margin: 20px 25px;
+
+	cursor: pointer;
+	transition: 0.3s all;
+}
+
+.product > .fav-button img
+{
+	width: 25px;
+	height: 25px;
+}
+
+.product > .fav-button:hover
+{
+	filter: grayscale(1);
+}
+
+.cart-block > .act
+{
+	align-self: flex-start;
+	flex-grow: 1;
+
+	min-width: 300px;
+	margin-left: 25px;
+	padding: 20px;
+
+	background: #9D9A9A;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cart-block > .act hr
+{
+	margin: 15px 0;
+}
+
+.cart-block > .act p
+{
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	color: #FFFFFF;
+}
+
+.act > .act-tovari, .act > .act-skidka, .act > .act-dostavka
+{
+	font-size: 18px;
+
+	margin-bottom: 15px;
+}
+
+.cart-block > .act span
+{
+	font-size: 25px;
+
+	margin-left: auto;
+	padding-left: 10px;
+
+	text-align: right;
+}
+
+.cart-block > .act span::after
+{
+	content: " р.";
+}
+
+.act > .act-skidka > span::before
+{
+	content: " - ";
+}
+
+.act > .order-button
+{
+	font-size: 17px;
+	font-weight: bold;
+
+	width: 100%;
+	padding: 13px 5px;
+
+	cursor: pointer;
+	transition: 0.3s all;
+
+	color: #E31E24;
+	border: 0;
+	background-color: #FFFFFF;
+}
+
+.act > .order-button:hover
+{
+	color: #FFFFFF;
+	background-color: #E31E24;
+}
+
+.pay-type
+{
+	margin-top: 25px;
+}
+
+.pay-type .container p
+{
+	font-size: 20px;
+
+	margin-left: 0;
+
+	color: #8B8787;
+}
+
+.delivery .delivery-type
+{
+	height: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+
+	width: 100%;
+	margin-top: 30px;
+
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.delivery .delivery-type label
+{
+	user-select: none;
+	font-size: 18px;
+
+	flex-grow: 1;
+
+	padding: 15px;
+
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	height: 100%;
+	color: #FF0008;
+	background-color: #FFFFFF;
+}
+
+.delivery .delivery-type label input[type=radio]
+{
+	display: none;
+}
+
+.delivery .delivery-type label.active
+{
+	color: #FFFFFF;
+	background-color: #FF0008;
+}
+
+.delivery .address
+{
+	font-size: 20px;
+
+	display: inline-block;
+
+	margin-bottom: 20px;
+
+	color: #000000;
+}
+
+.delivery > .delivery-cost
+{
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 29px;
+
+	margin-top: 25px;
+
+	color: #E31E24;
+}
+
+.delivery > .delivery-cost::after
+{
+	content: " р.";
+}
+
+.delivery .deliv-inf
+{
+	display: flex;
+	align-items: flex-start;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+
+	margin-top: 50px;
+}
+
+.delivery .deliv-inf input, .delivery .deliv-inf select
+{
+	height: 40px;
+	margin: 15px;
+	padding: 5px 15px;
+
+	border: 0;
+	border-bottom: 1px rgb(208, 208, 208) solid;
+}
+
+.delivery .deliv-inf select
+{
+	width: 100%;
+
+	background-color: #FFFFFF;
+}
+
+.delivery .deliv-inf select > option
+{
+	height: 40px;
+}
+
+.delivery .deliv-inf label, .delivery .deliv-inf label input
+{
+	width: 100%;
+}
+.delivery .deliv-inf label > .place_holder
+{
+	bottom: 25px;
+	left: 15px;
+}
+
+.delivery .deliv-inf label > p
+{
+	font-weight: bold;
+
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	justify-content: center;
+
+	text-transform: uppercase;
+
+	color: #9D9A9A;
+}
+
+.delivery .deliv-inf label > p > span
+{
+	width: 100px;
+}
+.delivery .change-address
+{
+	font-weight: bold;
+
+	margin-left: 15px;
+	padding: 15px 25px;
+
+	cursor: pointer;
+	transition: 0.3s all;
+
+	color: #FF0008;
+	border: 2px solid #FF0008;
+	background: #FFFFFF;
+}
+
+.delivery .change-address:hover
+{
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+	background: #FF0008;
+}
+
+.delivery > .info
+{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 23px;
+
+	margin-top: 50px;
+
+	color: #000000;
+}
+
+.products
+{
+	width: 100%;
+}
+
+.product .sale
+{
+	font-size: 26px;
+
+	position: absolute;
+	top: 15px;
+	left: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100px;
+	height: 50px;
+
+	color: #FFFFFF;
+	background-color: #E31E24;
+}
+
+.product > .sale::before
+{
+	content: "-";
+}
+
+.product > .sale::after
+{
+	content: "%";
+}
+
+.product > .product-info > .product-detail p
+{
+	text-align: left;
+}
+
+.available
+{
+	width: 200px;
+}
+
+.delete-cart
+{
+	position: absolute;
+	top: 20px;
+	right: 22px;
+
+	width: 30px;
+	height: 30px;
+
+	cursor: pointer;
+	transition: 0.3s all;
+}
+
+.delete-cart:hover
+{
+	filter: grayscale(1);
+}
+
+@media screen and (max-width: 1300px)
+{
+	.cart-block
+	{
+		flex-flow: row wrap;
+	}
+	.cart-block > .act
+	{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 1200px)
+{
+	.cart-block > .items
+	{
+		width: 100%;
+	}
+	.cart-block > .act
+	{
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 1000px)
+{
+	.product  .product-image, .product > .product-info, .product  .link-img
+	{
+		width: 100%;
+		max-width: 100%;
+	}
+	.product
+	{
+		flex-flow: row wrap;
+	}
+	.product > .product-count
+	{
+		margin: 15px;
+		margin-left: auto;
+	}
+	.product > .product-info > .product-name, .product > .product-info > .product-detail
+	{
+		padding: 2px 25px;
+	}
+	.product .product-image, .product .link-img
+	{
+		margin-right: 0;
+	}
+	.product > .product-info > .product-detail .product-brand
+	{
+		position: static;
+	}
+	.available
+	{
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 900px)
+{
+	.delivery .deliv-inf
+	{
+		flex-flow: column wrap;
+	}
+	.delivery .change-address
+	{
+		margin: 10px;
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 700px)
+{
+	.product
+	{
+		justify-content: center;
+	}
+	.product > .product-info > .product-name
+	{
+		text-align: center;
+	}
+	.product-count
+	{
+		order: 99;
+	}
+	.sliders p, .sliders a
+	{
+		flex-grow: 1;
+
+		margin-right: 0;
+	}
+	.product > .product-price
+	{
+		width: 100%;
+		padding: 0 25px;
+	}
+	h2
+	{
+		text-align: center;
+	}
+	.pay-type
+	{
+		padding-left: 25px;
+	}
+	.delivery
+	{
+		text-align: center;
+	}
+	.delivery > .delivery-cost
+	{
+		font-size: 18px;
+	}
+	.delivery .deliv-inf label > p > span
+	{
+		text-align: left;
+	}
+	.product > .product-info
+	{
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.product > .product-info > .product-detail p
+	{
+		text-align: center;
+	}
+	.product > .product-info > .product-detail
+	{
+		flex-flow: column nowrap;
+	}
+}
+
+@media screen and (max-width: 470px)
+{
+	.delivery .deliv-inf label > p
+	{
+		flex-flow: column nowrap;
+
+		margin-bottom: 25px;
+	}
+	.delivery .deliv-inf label > p > span
+	{
+		text-align: center;
+	}
+	.product > .product-info > .product-detail
+	{
+		flex-flow: column wrap;
+	}
+}
