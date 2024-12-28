@@ -20,7 +20,12 @@ foreach ($brands as $brandId => $brandInfo)
         <?php
             foreach ($brands as $brandId => $brandInfo)
             {
-                $image = $brandInfo['image'];
+
+                // Original
+                //$image = $brandInfo['image'];
+                //echo $brandInfo['id'];
+                // Test
+                $image = substr($brandInfo['image'], 6);
                 echo '<a href="./products.php=?brand='.$brandInfo['id'].'" class="brand"><img src="' . $image . '"> <span class="name" style="display: none;">'.$brandInfo['name'].'</span> </a>';
             }
         ?> 

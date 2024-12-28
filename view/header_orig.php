@@ -1,17 +1,15 @@
-<?php
-// echo '_____ New Header _______ ';
+<?
+//require_once __DIR__ . '/../model/xmlparser.php';
+//require_once __DIR__ . '/../model/connection.php';
 
-require_once __DIR__ . '/../model/xmlparser.php';
-require_once __DIR__ . '/../model/connection.php';
-
-$data = $xmlParseData['partitions'];
+/* $data = $xmlParseData['partitions'];
 
 $first = array();
 $two = array();
-$three = array();
+$three = array(); */
 
 
-foreach ($data as $category) {
+/* foreach ($data as $category) {
     if (categoryLevel($data, $category['id'], 0) == '1') {
         array_push($first, $category);
     }
@@ -23,27 +21,27 @@ foreach ($data as $category) {
     if (categoryLevel($data, $category['id'], 0) == '3') {
         array_push($three, $category);
     }
-}
+} */
 
-$categories['first'] = $first;
+/* $categories['first'] = $first;
 $categories['two'] = $two;
-$categories['three'] = $three;
+$categories['three'] = $three; */
 
-/*  echo "<pre>";
- var_dump($categories);
- echo "</pre>"; */
+// echo "<pre>";
+// var_dump($categories);
+// echo "</pre>";
 
-if (isset($_COOKIE['isLogin'])) {
+/* if (isset($_COOKIE['isLogin'])) {
     $idUser = (int)$_COOKIE['isLogin'];
     $result = $mysqli->query("SELECT * FROM users_all WHERE id_user = $idUser;");
     $userData = $result->fetch_assoc();
     $fio = explode(' ', $userData['fio']);
-}
+} */
 ?>
 
 <header class="header">
     <div class="content" style="padding-bottom: 0;">
-        <div class="menu">
+<!--         <div class="menu">
             <a href="./index.php"><img src="./resource/img/logo.svg" alt="logo"></a>
             <ul>
                 <li><a href="./../delivery.php">ДОСТАВКА</a></li>
@@ -55,13 +53,13 @@ if (isset($_COOKIE['isLogin'])) {
                     <p class="tel">8-495-380-42-88</p>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <div class="nav">
-            <button class="catalog" id="catalog"><span>|||</span> КАТАЛОГ ТОВАРОВ</button>
+            <!-- <button class="catalog" id="catalog"><span>|||</span> КАТАЛОГ ТОВАРОВ</button> -->
             <div class="expand-catalog hide">
                 <?php
 
-                foreach ($categories['first'] as $category) {
+/*                 foreach ($categories['first'] as $category) {
                     $idFirst = $category['id'];
                     echo '<a order="' . $category['sort'] . '" class="cat_1" href="catalog.php?id=' . $category['id'] . '"> <img src="./resource/img/icons/clip.svg"><p>' . $category['name'] . '</p><span>&#62;</span> </a>';
                     echo '<div class="expand-cat_2 hide">';
@@ -82,20 +80,20 @@ if (isset($_COOKIE['isLogin'])) {
 
                     echo '</div>';
                 }
-
+ */
                 ?>
             </div>
 
-            <form action="#" class="searchForm">
+<!--             <form action="#" class="searchForm">
                 <input type="search" placeholder="Поиск...">
                 <button><img src="./resource/img/icons/search.svg" alt="search"></button>
                 <div id="searchResult"> </div>
-            </form>
+            </form> -->
             <ul>
-                <li><a href="./favourite.php"><img src="./resource/img/icons/favourite.svg" alt="favorite"></a></li>
-                <li><a href="./cart.php"><img src="./resource/img/icons/cart.svg" alt="cart"></a></li>
+<!--                 <li><a href="./favourite.php"><img src="./resource/img/icons/favourite.svg" alt="favorite"></a></li>
+                <li><a href="./cart.php"><img src="./resource/img/icons/cart.svg" alt="cart"></a></li> -->
                 <?php
-                if (isset($idUser) && !empty($userData)) {
+/*                 if (isset($idUser) && !empty($userData)) {
                     echo '
                                 <li class="account"><a id="profie_button"><img src="./resource/img/icons/account.svg" alt="account"><p>' . $fio[1], ' ', mb_substr($fio[0], 0, 1), '.' . '<span class="arrow_down"> </span></p></a>
                                     <div class="user-act">
@@ -105,7 +103,7 @@ if (isset($_COOKIE['isLogin'])) {
                                 </li>';
                 } else {
                     echo '<li class="account"><a id="login_button"><img src="./resource/img/icons/account.svg" alt="account"><p>Войти <span class="arrow_down"></span></p></a></li>';
-                }
+                } */
                 ?>
 
             </ul>
@@ -115,11 +113,11 @@ if (isset($_COOKIE['isLogin'])) {
 
 <div id="modal_authorize" style="display: none;">
     <div class="modal">
-        <div class="type_auth">
+<!--         <div class="type_auth">
             <p id='log_form' class="active"> ВОЙТИ </p>
             <p id="reg_form"> ЗАРЕГИСТРИРОВАТЬСЯ</p>
-        </div>
-        <form action="../model/login.php" class="login">
+        </div> -->
+<!--         <form action="../model/login.php" class="login">
 
             <label class="placeinput">
                 <input required="1" type="text" id="login" />
@@ -136,9 +134,9 @@ if (isset($_COOKIE['isLogin'])) {
 
             <div id="loginButton"> войти </div>
 
-        </form>
+        </form> -->
 
-        <form class="register" style="display: none">
+<!--         <form class="register" style="display: none">
 
             <label class="placeinput" id="fio_label">
                 <input required="1" type="text" name="fio" id="fio" autocomplete="name" />
@@ -190,9 +188,9 @@ if (isset($_COOKIE['isLogin'])) {
             <p class="require"> <span>*</span> Поля обязательные для ввода</p>
 
             <div id="registerButton"> зарегистрироваться </div>
-        </form>
+        </form> -->
 
-        <form action="../model/passwordRecovery.php" method="GET" class="password_recovery" style="display: none;">
+<!--         <form action="../model/passwordRecovery.php" method="GET" class="password_recovery" style="display: none;">
             <h2> Восстановление пароля </h2>
             <label class="placeinput">
                 <input required="1" type="text" name="email" id="recoveryMail" />
@@ -201,8 +199,7 @@ if (isset($_COOKIE['isLogin'])) {
 
             <input type="submit" value="Восстановить" id="recoveryMailButton">
             <a href="#" class="passwordRecoveryBack"> Вспомнили пароль? </a>
-        </form>
+        </form> -->
 
     </div>
 </div>
-

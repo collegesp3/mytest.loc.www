@@ -29,16 +29,17 @@
 </head>
 
 <body>
+ 
+    <!-- <img src="Data/Картинки и баннеры/Логотипы/1.jpg" alt=""> -->
+    <?php  require(__DIR__ . '/view/header.php');  ?>
 
-    <?php require(__DIR__ . '/view/header.php'); ?>
-
-    <?php require(__DIR__ . '/view/banner.php'); ?>
+    <?php  require(__DIR__ . '/view/banner.php');  ?>
 
     <?php require(__DIR__ . '/view/sliderProducts.php'); ?>
 
-    <?php require(__DIR__ . '/view/sliderBrands.php'); ?>
+    <?php require(__DIR__ . '/view/sliderBrands.php');   ?>
 
-    <?php require(__DIR__ . '/view/footer.php'); ?>
+    <?php require(__DIR__ . '/view/footer.php');  ?>
 
 </body>
 

@@ -6,14 +6,28 @@ function isElement($type)
 
 $reader = new XMLReader();
 $reader->open(__DIR__ . '/../Data/catalog.xml');
-//$xmlParseData = [];
+$xmlParseData = [];
+
+function categoryLevel(array $arr, int $id, int $numb)
+{
+    $topId = $arr[$id]['top_id'];
+    $counter = $numb;
+
+    if ($arr[$id]['top_id'] != '') {
+        ++$counter;
+        return categoryLevel($arr, $topId, $counter);
+    }
+
+    return $counter + 1;
+}
+
 
 while ($reader->read()) {
     //brands
     if (isElement($reader->nodeType) && $reader->name == 'brands') {
         $reader->read();
 
-        //$brands = [];
+        $brands = [];
 
         while ($reader->name != 'brands') {
             if (isElement($reader->nodeType)) {
@@ -33,7 +47,7 @@ while ($reader->read()) {
     if (isElement($reader->nodeType) && $reader->name == 'Country') {
         $reader->read();
 
-        //$countries = [];
+        $countries = [];
 
         while ($reader->name != 'Country') {
             if (isElement($reader->nodeType)) {
@@ -50,7 +64,7 @@ while ($reader->read()) {
     if (isElement($reader->nodeType) && $reader->name == 'specs') {
         $reader->read();
 
-        //$specs = [];
+        $specs = [];
 
         while ($reader->name != 'specs') {
             if (isElement($reader->nodeType)) {
@@ -67,7 +81,7 @@ while ($reader->read()) {
     if (isElement($reader->nodeType) && $reader->name == 'partitions') {
         $reader->read();
 
-        //$partitions = [];
+        $partitions = [];
 
         while ($reader->name != 'partitions') {
             if (isElement($reader->nodeType)) {
@@ -99,7 +113,7 @@ while ($reader->read()) {
     if (isElement($reader->nodeType) && $reader->name == 'nomeklatura') {
         $reader->read();
 
-        //$nomeklatura = [];
+        $nomeklatura = [];
 
         while ($reader->name != 'nomeklatura') {
             if (isElement($reader->nodeType)) {
